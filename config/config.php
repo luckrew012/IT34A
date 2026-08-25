@@ -11,8 +11,7 @@ define('DB_NAME','it34a_lab_db');
 define('DB_USER','root');
 define('DB_PASS','');
 
-$user_id = "root" ?? null;
-$user_email = "root" ?? null;
+
 
 try{
     $pdo = new PDO(
