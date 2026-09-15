@@ -37,7 +37,7 @@ return false;
 
 }
 
-$_SESSION['user_id']=$user['iuser_id'];
+$_SESSION['user_id']=$user['user_id'];
 $_SESSION['user_email']=$user['user_email'];
 $_SESSION['user_username']=$user['user_username'];
 $_SESSION['user_role']=$user['user_role'];
