@@ -7,7 +7,7 @@ CREATE TABLE user_sessions(
     session_end DATETIME DEFAULT NULL,
     session_duration INT DEFAULT NULL,
 
-    CONTRAINTS fk_user_sessions_user_id
+    CONSTRAINT fk_user_sessions_user_id
     FOREIGN KEY(user_id)
     REFERENCES users(user_id)
     ON DELETE CASCADE
