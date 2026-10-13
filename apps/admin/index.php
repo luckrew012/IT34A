@@ -89,7 +89,7 @@ $activities =$stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     <td>
                         <?= htmlspecialchars(
-                            $activity['activity_log_user_agents']
+                            $activity['activity_log_user_agent']
                         ) ?>
                     </td>
                     <td>
