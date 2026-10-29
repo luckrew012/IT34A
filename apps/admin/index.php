@@ -1,6 +1,5 @@
 <?php
-require '../../config/config.php';
-require '../../config/functions.php';
+require_once __DIR__ . '/../../config/config.php';
 
 requireRole('admin');
 
@@ -89,7 +88,7 @@ $activities =$stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     <td>
                         <?= htmlspecialchars(
-                            $activity['activity_log_user_agents']
+                            $activity['activity_log_user_agent']
                         ) ?>
                     </td>
                     <td>
