@@ -73,5 +73,43 @@ function hasActiveUserSession($pdo,$user_id){
 
     return(bool) $stmt->fetchColumn();
 }
+
+// Session Timeout
+
+function checkSessionTimeout(){
+
+    global $pdo;
+
+    // Timeout settings
+    // 10 sec for testing
+    // 1800s for 30min session time
+
+    $timeout = 10;
+
+    // Check session activity
+    if(isset($_SESSION['last_activity'])){
+        $inactive = time() - $_SESSION['last_activity'];
+
+        if($inactive >= $timeout){
+
+            // End database session
+            endUserSession($pdo);
+
+            // Destroy PHP session
+            session_unset();
+            session_destroy();
+
+            // Redirect
+            header('Location: '
+             . BASE_URL . 
+             '/index.php?timeout=1'
+             );
+            exit;
+        }
+    }
+
+    $_SESSION['last_activity'] = time();
+}
+
 ?>
 
